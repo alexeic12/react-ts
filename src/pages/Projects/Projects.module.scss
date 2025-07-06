@@ -2,162 +2,155 @@
 @use "../../saas//breackpoints.scss" as *;
 
 .container {
-    position: relative; 
-    min-height: 100vh;
-    display:inline-block;
-    align-items: center;
-    justify-content: flex-start; 
-    color: #fff;
-    padding-left: 0rem; 
-    padding-right: 10rem; 
-  }
-  
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    text-align: left;
-    max-width: 700px;
-    width: 100%; // optional, allows full-width if needed
-    border: 7px solid rgb(53, 92, 92,0.4);
-    margin: 20px;
-    padding: 20px;
-    background-color: rgb(53, 92, 92,0.2);
-  }
+  position: relative;
+  min-height: 100vh;
+  display: inline-block;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  padding-left: 0rem;
+  padding-right: 10rem;
+}
 
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  max-width: 700px;
+  width: 100%; // optional, allows full-width if needed
+  border: 7px solid rgb(53, 92, 92, 0.4);
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(53, 92, 92, 0.2);
+}
 
-  
-  .title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 
-    // Responsive adjustments for phone landscape
-    @include respond-to(mobileLanscape) {
-        font-size: 1rem;
-margin-bottom: 0.5rem;
-text-align: left;
-      }
-
-            // Responsive adjustments for phone
-            @include respond-to(mobile) {
-                font-size: 1rem;
-        margin-bottom: 0.5rem;
-        text-align: left;
-              }
-  }
-  
-  .subtitle {
+  // Responsive adjustments for phone landscape
+  @include respond-to(mobileLanscape) {
     font-size: 1rem;
+    margin-bottom: 0.5rem;
     text-align: left;
-    display: inline-flex;
-    a {
-      font-size: .75rem;
-      padding-left: 50px;
-      margin-left: 20px;
-      color: #00ffff;
-      text-decoration:solid;
-      font-weight: bold;
-    }
-    // Responsive adjustments for phone landscape
-    @include respond-to(mobileLanscape) {
-        font-size: 0.7rem;
-text-align: left;
-      }
+  }
 
-        // Responsive adjustments for phone
-        @include respond-to(mobile) {
-            font-size: 0.5rem;
+  // Responsive adjustments for phone
+  @include respond-to(mobile) {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
     text-align: left;
-          }
   }
-  
+}
 
-
-  .buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: right;
-
-    // Responsive adjustments for phone landscape
-    @include respond-to(mobileLanscape) {
-        gap: 1rem;
-      }
-                // Responsive adjustments for phone
-                @include respond-to(mobile) {
-                    gap: .5rem;
-                  }
-  }
-
-  .buttonsCenter {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-
-    // Responsive adjustments for phone landscape
-    @include respond-to(mobileLanscape) {
-        gap: 1rem;
-      }
-                // Responsive adjustments for phone
-                @include respond-to(mobile) {
-                    gap: .5rem;
-                  }
-  }
-
-  .buttonsCenter button {
-    background-color: #ffffffcc;
-    border: none;
-    color: #333;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
+.subtitle {
+  font-size: 1rem;
+  text-align: left;
+  display: inline-flex;
+  a {
+    font-size: 0.75rem;
+    padding-left: 50px;
+    margin-left: 20px;
+    color: #00ffff;
+    text-decoration: solid;
     font-weight: bold;
-    transition: background-color 0.3s;
-     // Responsive adjustments for phone landscape
-     @include respond-to(mobileLanscape) {
-        font-size: 0.75rem;
-        padding: .25rem .5rem;
-        border-radius: 2px;
-      }
-                // Responsive adjustments for phone
-                @include respond-to(mobile) {
-                    font-size: 0.75rem;
-                    padding: .25rem .5rem;
-                    border-radius: 2px;
-                  }
   }
-  
-  .buttons button {
-    background-color: rgba(17, 189, 189, 0.2);
-      
-    border: none;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-     // Responsive adjustments for phone landscape
-     @include respond-to(mobileLanscape) {
-        font-size: 0.75rem;
-        padding: .25rem .5rem;
-        border-radius: 2px;
-      }
-                // Responsive adjustments for phone
-                @include respond-to(mobile) {
-                    font-size: 0.75rem;
-                    padding: .25rem .5rem;
-                    border-radius: 2px;
-                  }
+  // Responsive adjustments for phone landscape
+  @include respond-to(mobileLanscape) {
+    font-size: 0.7rem;
+    text-align: left;
+  }
 
-                  
+  // Responsive adjustments for phone
+  @include respond-to(mobile) {
+    font-size: 0.5rem;
+    text-align: left;
   }
-  
-  .buttons button:hover {
-    background-color: aqua;
-    color: black;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: right;
+
+  // Responsive adjustments for phone landscape
+  @include respond-to(mobileLanscape) {
+    gap: 1rem;
   }
-  
-  .buttonsCenter button:hover {
-    background-color: aqua;
-    color: black;
+  // Responsive adjustments for phone
+  @include respond-to(mobile) {
+    gap: 0.5rem;
   }
+}
+
+.buttonsCenter {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  // Responsive adjustments for phone landscape
+  @include respond-to(mobileLanscape) {
+    gap: 1rem;
+  }
+  // Responsive adjustments for phone
+  @include respond-to(mobile) {
+    gap: 0.5rem;
+  }
+}
+
+.buttonsCenter button {
+  background-color: #ffffffcc;
+  border: none;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  // Responsive adjustments for phone landscape
+  @include respond-to(mobileLanscape) {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+  }
+  // Responsive adjustments for phone
+  @include respond-to(mobile) {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+  }
+}
+
+.buttons button {
+  background-color: rgba(17, 189, 189, 0.2);
+
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  // Responsive adjustments for phone landscape
+  @include respond-to(mobileLanscape) {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+  }
+  // Responsive adjustments for phone
+  @include respond-to(mobile) {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+  }
+}
+
+.buttons button:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.buttonsCenter button:hover {
+  background-color: aqua;
+  color: black;
+}

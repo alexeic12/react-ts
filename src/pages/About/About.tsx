@@ -10,7 +10,11 @@ export default function About(): ReactElement {
       <div className={styles.content}>
         <h1 className={styles.title}>Few words about me</h1>
         <p className={styles.subtitle}>
-          I am a creative person, with a strong intrinsic motivation and a constant curiosity towards new technological trends. I claim my confidence in using any new programming language and technological trend. I believe that adaptability is essential for success in the IT industry.
+          I am a creative person, with a strong intrinsic motivation and a
+          constant curiosity towards new technological trends. I claim my
+          confidence in using any new programming language and technological
+          trend. I believe that adaptability is essential for success in the IT
+          industry.
         </p>
         <div className={styles.buttons}>
           <button onClick={() => navigate("/projects")}>My Projects</button>

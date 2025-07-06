@@ -5,8 +5,12 @@ $breakpoint-mobile-landscape: 1000px;
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: $breakpoint-mobile) { @content; }
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
   } @else if $breakpoint == mobileLanscape {
-    @media (max-width: $breakpoint-mobile-landscape) { @content; }
+    @media (max-width: $breakpoint-mobile-landscape) {
+      @content;
+    }
   }
 }

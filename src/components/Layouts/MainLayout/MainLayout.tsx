@@ -2,11 +2,10 @@ import { Outlet, useLocation } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "./MainLayout.module.scss";
-import {routes} from "../../../routes/index"
+import { routes } from "../../../routes/index";
 import { capitalizeFirstLetter } from "../../../utils";
 
 export default function MainLayout() {
-
   const lastChildRoute = (routes[0].children?.length ?? 0) - 1;
 
   return (
@@ -27,29 +26,30 @@ export default function MainLayout() {
             className={styles.navbarCollapse}
           >
             <Nav className="me-auto">
-    
-            {
-              
-              //Dinamically add navbar components
-              routes[0].children?.map((childRoute, index)=>{
-                
-                if(childRoute.index){
-                  return <Nav.Link className={styles.navLink} as={Link} to={childRoute.path || "/"}>
-                  Home
-                </Nav.Link>
-                }else if(index !== lastChildRoute){
-                  return <Nav.Link className={styles.navLink} as={Link} to={childRoute.path || "/"}>
-                  {capitalizeFirstLetter(childRoute.path|| "Err")}
-                </Nav.Link>
+              {//Dinamically add navbar components
+              routes[0].children?.map((childRoute, index) => {
+                if (childRoute.index) {
+                  return (
+                    <Nav.Link
+                      className={styles.navLink}
+                      as={Link}
+                      to={childRoute.path || "/"}
+                    >
+                      Home
+                    </Nav.Link>
+                  );
+                } else if (index !== lastChildRoute) {
+                  return (
+                    <Nav.Link
+                      className={styles.navLink}
+                      as={Link}
+                      to={childRoute.path || "/"}
+                    >
+                      {capitalizeFirstLetter(childRoute.path || "Err")}
+                    </Nav.Link>
+                  );
                 }
-                
-                
-              })
-
-              
-            }
-            
-              
+              })}
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -57,7 +57,7 @@ export default function MainLayout() {
 
       <div className={styles.mainContainer}>
         <Container>
-            <Outlet />
+          <Outlet />
         </Container>
       </div>
     </>
