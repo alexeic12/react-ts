@@ -63,7 +63,7 @@ text-align: left;
   .buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: left;
 
     // Responsive adjustments for phone landscape
     @include respond-to(mobileLanscape) {
