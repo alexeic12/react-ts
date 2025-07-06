@@ -1,0 +1,83 @@
+/* MainLayout.module.scss */
+@use '../../../saas/breackpoints.scss' as *;
+
+/* Navbar bottom spacing */
+.mainNavbar {
+  margin-bottom: 0rem;
+
+
+}
+
+/* Navbar Link customization */
+.navLink {
+  color: #ffffff;
+  border-radius: 50px;
+
+  &:hover {
+    color: #ff0000 !important;
+    padding: 10px;
+    background-color: aqua;
+  }
+}
+
+/* Navbar brand customization */
+.navbarBrand {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* Navbar collapse section */
+.navbarCollapse {
+  background-color: rgb(53, 92, 92);
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  width: 20%;
+}
+
+
+/* Container padding around pages */
+.mainContainer {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/1.jpg'); // Replace with your actual image
+  background-size: cover;
+  background-position: 0% 50%;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-attachment: fixed; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #fff;
+  overflow: hidden;
+
+   // Responsive adjustments for phone lanscape
+          @include respond-to(mobileLanscape) {
+            background-size: 130%;
+            background-position: 10% 40%;
+            padding-right: 15rem;
+            flex-direction: column; // Optional: stack content vertically
+            text-align: center;
+          }
+
+    // Responsive adjustments for phone
+    @include respond-to(mobile){
+      background-size: 300%;
+      background-position: 40% 50%;
+      padding: 0rem;
+      flex-direction: column; // Optional: stack content vertically
+      text-align: center;
+    }
+
+}
+.mainContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); // semi-transparent overlay
+  z-index: 0;
+}
+
