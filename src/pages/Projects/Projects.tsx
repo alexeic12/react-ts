@@ -6,7 +6,7 @@ export default function Projects(): ReactElement {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container}`}>
       <div className={styles.content}>
         <h1 className={styles.title}>Casio Education</h1>
         <p className={styles.subtitle}>
@@ -36,27 +36,37 @@ export default function Projects(): ReactElement {
         <h1 className={styles.title}>Evoload</h1>
         <p
           className={styles.subtitle}
-          onClick={() =>
-            (window.location.href = "https://platform.evoload.co/login")
-          }
         >
           • Engineered the Freight Exchange platform at Evoload, enhancing
           logistics efficiency
+          
+          <span className={styles.linkWrapper}>
           <a href="https://platform.evoload.co/"> Visit&nbsp;&gt;</a>
+  </span>
         </p>
         <p className={styles.subtitle}>
           • Spearheaded the development of the Evoload Staking platform,
           optimizing digital asset management.
+          
+          <span className={styles.linkWrapper}>
           <a href="https://staking.evoload.co/"> Visit&nbsp;&gt;</a>
+  </span>
         </p>
         <p className={styles.subtitle}>
           • Innovated the Evoload Sales application to streamline pre-sale
           processes.
+          
+          <span className={styles.linkWrapper}>
           <a href="https://presale.evoload.co/"> Visit&nbsp;&gt;</a>
+  </span>
         </p>
         <p className={styles.subtitle}>
           • Architected the Evoload Recruitment portal to automate talent
-          acquisition .<a href="https://portal.evoload.co/"> Visit&nbsp;&gt;</a>
+          acquisition .
+          
+          <span className={styles.linkWrapper}>
+    <a href="https://platform.evoload.co/"> Visit&nbsp;&gt;</a>
+  </span>
         </p>
         <p className={styles.subtitle}>
           • Crafted advanced asset analysis scripts, driving data-driven
@@ -101,7 +111,7 @@ export default function Projects(): ReactElement {
         </p>
       </div>
 
-      <div className={styles.buttonsCenter}>
+      <div className={`m-5 mb-5 ${styles.buttonsCenter}`}>
         <button onClick={() => navigate("/about")}>About Me</button>
         <button onClick={() => navigate("/")}>Home</button>
       </div>
