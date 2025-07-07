@@ -4,6 +4,8 @@
 /* Navbar bottom spacing */
 .mainNavbar {
   margin-bottom: 0rem;
+  position: relative; // or sticky/fixed if you want it fixed
+  z-index: 10; // above the background
 }
 
 /* Navbar Link customization */
@@ -37,42 +39,48 @@
 .mainContainer {
   position: relative;
   min-height: 100vh;
-  background-image: url("/1.jpg"); // Replace with your actual image
-  background-size: cover;
-  background-position: 0% 50%;
-  background-size: 120%;
-  background-repeat: no-repeat;
-  background-color: black;
-  background-attachment: fixed;
+  background-color: black; // fallback color
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   color: #fff;
   overflow: hidden;
+  z-index: 1; // ensures content appears above the background
 
-  // Responsive adjustments for phone lanscape
   @include respond-to(mobileLanscape) {
-    background-size: 130%;
-    background-position: 10% 40%;
-    padding-right: 15rem;
-    flex-direction: column; // Optional: stack content vertically
+    padding-right: 20rem;
+    flex-direction: column;
     text-align: center;
   }
 
-  // Responsive adjustments for phone
   @include respond-to(mobile) {
-    background-size: 300%;
-    background-position: 40% 50%;
     padding: 0rem;
-    flex-direction: column; // Optional: stack content vertically
+    flex-direction: column;
     text-align: center;
   }
 }
+
+/* Fixed background image overlay */
 .mainContainer::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4); // semi-transparent overlay
-  z-index: 0;
+  background-image: url("/1.jpg");
+  background-size: 120%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.4); // Black overlay with 50% opacity
+  background-blend-mode: darken;
+  z-index: -1;
+
+  @include respond-to(mobileLanscape) {
+    background-size: 130%;
+    background-position: 10% 40%;
+  }
+
+  @include respond-to(mobile) {
+    background-size: 300%;
+    background-position: 40% 50%;
+  }
 }
