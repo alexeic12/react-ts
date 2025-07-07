@@ -1,13 +1,24 @@
 /* Home.module.scss */
 @use "../../saas//breackpoints.scss" as *;
 
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .container {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: #fff;
+  color: #f1f5f9; // off-white text color for consistency
   padding-left: 0rem;
   padding-right: 10rem;
 }
@@ -23,6 +34,7 @@
 .title {
   font-size: 3rem;
   margin-bottom: 1rem;
+  animation: fadeSlideUp 0.8s ease forwards;
 
   // Responsive adjustments for phone landscape
   @include respond-to(mobileLanscape) {
@@ -42,6 +54,7 @@
 .subtitle {
   font-size: 1rem;
   margin-bottom: 2rem;
+  animation: fadeSlideUp 0.8s ease forwards;
 
   // Responsive adjustments for phone landscape
   @include respond-to(mobileLanscape) {
@@ -66,22 +79,25 @@
   // Responsive adjustments for phone landscape
   @include respond-to(mobileLanscape) {
     gap: 1rem;
+    justify-content: left;
   }
   // Responsive adjustments for phone
   @include respond-to(mobile) {
     gap: 0.5rem;
+    justify-content: left;
   }
 }
 
 .buttons button {
-  background-color: #ffffffcc;
+  background-color: rgba(56, 189, 248, 0.1); // soft blue bg
   border: none;
-  color: #333;
+  color: #f1f5f9; // off-white text
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s;
+
   // Responsive adjustments for phone landscape
   @include respond-to(mobileLanscape) {
     font-size: 0.75rem;
@@ -97,5 +113,6 @@
 }
 
 .buttons button:hover {
-  background-color: aqua;
+  background-color: #14b8a6; // teal hover bg
+  color: #fff;
 }

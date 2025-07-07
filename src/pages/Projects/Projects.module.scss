@@ -7,7 +7,7 @@
   display: inline-block;
   align-items: center;
   justify-content: flex-start;
-  color: #fff;
+  color: #f1f5f9; // off-white for readability
   padding-left: 0rem;
   padding-right: 10rem;
 }
@@ -17,11 +17,11 @@
   z-index: 1;
   text-align: left;
   max-width: 700px;
-  width: 100%; // optional, allows full-width if needed
-  border: 7px solid rgb(53, 92, 92, 0.4);
+  width: 100%; //Full screen
+  background-color: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 20px;
   padding: 20px;
-  background-color: rgb(53, 92, 92, 0.2);
 }
 
 .title {
@@ -47,14 +47,19 @@
   font-size: 1rem;
   text-align: left;
   display: inline-flex;
-  
+
   a {
     font-size: 0.75rem;
     padding-left: 50px;
     margin-left: 20px;
-    color: #00ffff;
+    color: #38bdf8;
+    font-weight: 600;
     text-decoration: solid;
-    font-weight: bold;
+
+    &:hover {
+      color: #14b8a6;
+      text-decoration: underline;
+    }
   }
 
   .linkWrapper a {
@@ -67,7 +72,7 @@
     opacity: 1;
     visibility: visible;
   }
-  
+
   // Responsive adjustments for phone landscape
   @include respond-to(mobileLanscape) {
     font-size: 0.7rem;
@@ -112,9 +117,9 @@
 }
 
 .buttonsCenter button {
-  background-color: #ffffffcc;
+  background-color: rgba(56, 189, 248, 0.1); // soft blue background
+  color: #f1f5f9;
   border: none;
-  color: #333;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
@@ -135,10 +140,9 @@
 }
 
 .buttons button {
-  background-color: rgba(17, 189, 189, 0.2);
-
+  background-color: rgba(56, 189, 248, 0.1); // soft blue background
+  color: #f1f5f9;
   border: none;
-  color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
@@ -158,12 +162,8 @@
   }
 }
 
-.buttons button:hover {
-  background-color: aqua;
-  color: black;
-}
-
+.buttons button:hover,
 .buttonsCenter button:hover {
-  background-color: aqua;
-  color: black;
+  background-color: #14b8a6;
+  color: #fff;
 }
