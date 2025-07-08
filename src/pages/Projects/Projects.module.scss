@@ -48,10 +48,24 @@
   text-align: left;
   display: inline-flex;
 
+    // Responsive adjustments for phone landscape
+    @include respond-to(mobileLanscape) {
+      font-size: 0.7rem;
+      text-align: left;
+      margin: .3rem;
+      padding: 0;
+    }
+  
+    // Responsive adjustments for phone
+    @include respond-to(mobile) {
+      font-size: 0.5rem;
+      text-align: left;
+      margin: .25rem;
+      padding: 0;
+    }
+
   a {
     font-size: 0.75rem;
-    padding-left: 50px;
-    margin-left: 20px;
     color: #38bdf8;
     font-weight: 600;
     text-decoration: solid;
@@ -62,28 +76,31 @@
     }
   }
 
-  .linkWrapper a {
+  .linkWrapper {
+    a {
+      padding-left: 2rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
+
+        // Responsive adjustments for phone landscape
+        @include respond-to(mobileLanscape) {
+          padding: 0;
+        }
+      
+        // Responsive adjustments for phone
+        @include respond-to(mobile) {
+          padding: 0;
+        }
+
   }
+}
 
   &:hover .linkWrapper a {
     opacity: 1;
     visibility: visible;
   }
 
-  // Responsive adjustments for phone landscape
-  @include respond-to(mobileLanscape) {
-    font-size: 0.7rem;
-    text-align: left;
-  }
-
-  // Responsive adjustments for phone
-  @include respond-to(mobile) {
-    font-size: 0.5rem;
-    text-align: left;
-  }
 }
 
 .buttons {

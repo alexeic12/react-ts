@@ -51,7 +51,7 @@ export default function About(): ReactElement {
         </div>
 
         <div className={styles.buttons}>
-          <button onClick={() => navigate("/projects")}>My Projects</button>
+          <button onClick={() => navigate("/experience")}>My Projects</button>
           <button onClick={() => navigate("/")}>Home</button>
         </div>
       </div>

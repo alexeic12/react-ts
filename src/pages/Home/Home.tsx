@@ -14,7 +14,7 @@ export default function Home(): ReactElement {
           clean code, beautiful design, and continuous learning.
         </p>
         <div className={styles.buttons}>
-          <button onClick={() => navigate("/projects")}>My Projects</button>
+          <button onClick={() => navigate("/experience")}>My Projects</button>
           <button onClick={() => navigate("/about")}>About Me</button>
         </div>
       </div>
