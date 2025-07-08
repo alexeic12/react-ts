@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Projects.module.scss";
+import styles from "./Experience.module.scss";
 
 export default function Projects(): ReactElement {
   const navigate = useNavigate();

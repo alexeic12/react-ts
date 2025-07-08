@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import type { RouteObject } from "react-router-dom";
 import MainLayout from "../components/Layouts/MainLayout/MainLayout";
-import Projects from "../pages/Projects/Projects";
+import Experience from "../pages/Projects/Experience";
 
 // Lazy-imported page components
 const Home = lazy(() => import("../pages/Home/Home"));
@@ -15,7 +15,7 @@ export const routes: RouteObject[] = [
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
-      { path: "experience", element: <Projects /> },
+      { path: "experience", element: <Experience /> },
       { path: "*", element: <NotFound /> },
     ],
   },
