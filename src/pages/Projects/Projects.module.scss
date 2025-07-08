@@ -10,6 +10,16 @@
   color: #f1f5f9; // off-white for readability
   padding-left: 0rem;
   padding-right: 10rem;
+
+  @include respond-to(mobileLanscape) {
+    margin-top: 3rem;
+    margin-bottom: 15rem;
+  }
+
+  @include respond-to(mobile) {
+    margin-top: 3rem;
+    margin-bottom: 15rem;
+  }
 }
 
 .content {

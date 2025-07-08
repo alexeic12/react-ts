@@ -12,10 +12,12 @@
 
   @include respond-to(mobileLanscape) {
     margin-top: 3rem;
+    margin-bottom: 15rem;
   }
 
   @include respond-to(mobile) {
     margin-top: 3rem;
+    margin-bottom: 15rem;
   }
 }
 
