@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "./MainLayout.module.scss";
@@ -7,6 +8,7 @@ import { capitalizeFirstLetter } from "../../../utils";
 
 export default function MainLayout() {
   const lastChildRoute = (routes[0].children?.length ?? 0) - 1;
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <>
@@ -15,6 +17,8 @@ export default function MainLayout() {
         variant="dark"
         expand="lg"
         className={styles.mainNavbar}
+        expanded={expanded}
+        onToggle={() => setExpanded((prev) => !prev)}
       >
         <Container>
           <Navbar.Brand className={styles.navbarBrand} as={Link} to="/">
@@ -34,6 +38,7 @@ export default function MainLayout() {
                       className={styles.navLink}
                       as={Link}
                       to={childRoute.path || "/"}
+                      onClick={() => setExpanded(false)}
                     >
                       Home
                     </Nav.Link>
@@ -44,6 +49,7 @@ export default function MainLayout() {
                       className={styles.navLink}
                       as={Link}
                       to={childRoute.path || "/"}
+                      onClick={() => setExpanded(false)}
                     >
                       {capitalizeFirstLetter(childRoute.path || "Err")}
                     </Nav.Link>

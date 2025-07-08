@@ -9,6 +9,14 @@
   color: #f1f5f9; // light text
   padding-left: 0rem;
   padding-right: 10rem;
+
+  @include respond-to(mobileLanscape) {
+    margin-top: 3rem;
+  }
+
+  @include respond-to(mobile) {
+    margin-top: 3rem;
+  }
 }
 
 .content {
@@ -39,7 +47,37 @@
   }
 }
 
-.subtitle {
+.subtitle1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+
+  @include respond-to(mobileLanscape) {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.subtitle2 {
+  font-size: 1.5rem;
+  font-family: 'Fira Code', monospace;
+
+  @include respond-to(mobileLanscape) {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.text {
   font-size: 1rem;
   margin-bottom: 2rem;
 
@@ -51,6 +89,21 @@
   @include respond-to(mobile) {
     font-size: 0.7rem;
     margin-bottom: 1rem;
+  }
+}
+
+.text2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+
+  @include respond-to(mobileLanscape) {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
   }
 }
 

@@ -25,12 +25,10 @@
   }
 
   @include respond-to(mobile) {
-    
     &:hover {
       padding: 10px;
     }
   }
-
 }
 
 /* Navbar brand customization */
@@ -56,7 +54,50 @@
   }
 }
 
-/* Container padding around pages */
+/* Container background animation */
+@keyframes backgroundMoveDesktop {
+  0% {
+    background-size: 130%;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-size: 100%;
+    background-position: 0% 40%;
+  }
+  100% {
+    background-size: 130%;
+    background-position: 0% 50%;
+  }
+}
+@keyframes backgroundMoveMobileLandscape {
+  0% {
+    background-size: 130%;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-size: 100%;
+    background-position: 0% 20%;
+  }
+  100% {
+    background-size: 130%;
+    background-position: 0% 50%;
+  }
+}
+@keyframes backgroundMoveMobile {
+  0% {
+    background-size: 300%;
+    background-position: 30% 40%;
+  }
+  50% {
+    background-size: 250%;
+    background-position: 40% 40%;
+  }
+  100% {
+    background-size: 300%;
+    background-position: 30% 40%;
+  }
+}
+
 .mainContainer {
   position: relative;
   min-height: 100vh;
@@ -69,6 +110,28 @@
   overflow: hidden;
   z-index: 1; // ensures content appears above the background
 
+  &:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("/1.jpg");
+    background-size: 120%;
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.4); // Black overlay with 50% opacity
+    background-blend-mode: darken;
+    z-index: -1;
+    animation: backgroundMoveDesktop 60s linear infinite;
+
+    @include respond-to(mobileLanscape) {
+      animation: backgroundMoveMobileLandscape 60s linear infinite;
+    }
+
+    @include respond-to(mobile) {
+      animation: backgroundMoveMobile 60s linear infinite;
+    }
+  }
+
   @include respond-to(mobileLanscape) {
     padding-right: 20rem;
     flex-direction: column;
@@ -79,29 +142,5 @@
     padding: 0rem;
     flex-direction: column;
     text-align: center;
-  }
-}
-
-/* Fixed background image overlay */
-.mainContainer::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("/1.jpg");
-  background-size: 120%;
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.4); // Black overlay with 50% opacity
-  background-blend-mode: darken;
-  z-index: -1;
-
-  @include respond-to(mobileLanscape) {
-    background-size: 130%;
-    background-position: 10% 40%;
-  }
-
-  @include respond-to(mobile) {
-    background-size: 300%;
-    background-position: 40% 50%;
   }
 }
