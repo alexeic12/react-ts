@@ -13,18 +13,39 @@ export default function Projects(): ReactElement {
           • Maintenance and optimization of cluster (K8S)
         </p>
         <p className={styles.subtitle}>
-          • FullStack development for new platform functionalities
+          • FullStack development for new platform functionalities using NodeJS, ReactJS, and PostgreSQL
         </p>
-        <p className={styles.subtitle}>• Database administration</p>
         <p className={styles.subtitle}>
           • Integration with Salesforce database
         </p>
-        <p className={styles.subtitle}>• Sanity Studio maintenance</p>
-        <p className={styles.subtitle}>• Creating scripts for various tasks</p>
+        <p className={styles.subtitle}>• Implementation of migration solutions, and synchronization of the databases</p>
         <div className={styles.buttons}>
           <button
             onClick={() =>
               (window.location.href = "https://casio-education.eu/")
+            }
+          >
+            View &gt;
+          </button>
+        </div>
+      </div>
+
+      <div className={styles.content}>
+        <h1 className={styles.title}>SourceLess</h1>
+        <p className={styles.subtitle}>
+          • Built web3 marketplace using Solidity, HardHat, RectJS, NextJS.
+        </p>
+        <p className={styles.subtitle}>
+          • Integrated GoldSky as a real time database solution for the marketplace
+        </p>
+        <p className={styles.subtitle}>
+          • Made contributions for the mobile cryoto wallet application by integrating WalletConnect
+        </p>
+        <p className={styles.subtitle}>• Integrated new built wallet, and Metamask on the new marketplace using WalletConnect protocol</p>
+        <div className={styles.buttons}>
+          <button
+            onClick={() =>
+              (window.location.href = "https://www.sourceless.net/")
             }
           >
             View &gt;
